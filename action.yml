@@ -1,0 +1,20 @@
+name: 'PyPoetry'
+author: '@hericlesme'
+description: 'Python dependency management and packaging with Poetry
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'truck'
+  color: 'gray-dark'
+inputs:
+  python_version:
+    description: 'The python version to install'
+    required: true
+  poetry_version:
+    description: 'The poetry version to install'
+    required: true
+  workdir:
+    description: 'Sets the working directory for poetry'
+    required: false
+    default: '.'
