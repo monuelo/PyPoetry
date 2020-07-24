@@ -1,4 +1,4 @@
-name: 'PyPoetry'
+name: 'PyPoetry Action'
 author: '@hericlesme'
 description: 'Python dependency management and packaging with Poetry
 branding:
