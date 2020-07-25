@@ -33,5 +33,5 @@ RUN git clone --depth 1 https://github.com/pyenv/pyenv.git $PYENV_ROOT && \
 # Install xxenv-latest, for inferring latest version of python
 RUN git clone https://github.com/momo-lab/xxenv-latest.git $PYENV_ROOT/plugins/xxenv-latest
 
-COPY requirements.txt entrypoint.sh /
+COPY entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
