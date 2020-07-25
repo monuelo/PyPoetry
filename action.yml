@@ -11,6 +11,10 @@ inputs:
   poetry_version:
     description: 'The poetry version to install'
     required: true
+  command:
+    description: 'The poetry command to run'
+    required: true
+    default: '-V'
   workdir:
     description: 'Sets the working directory for poetry'
     required: false
