@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-function main() {
+main() {
   echo "" 
 
   # Check existence of required inputs
@@ -12,7 +12,7 @@ function main() {
   installDependencies
 
   # Change workdir (if provided)
-  if "${INPUT_WORKDIR}"; then
+  if uses "${INPUT_WORKDIR}"; then
     changeWorkingDirectory
   fi
 
@@ -29,36 +29,40 @@ function main() {
   resetWorkingDirectory
 }
 
-function sanitize() {
+sanitize() {
   if [ -z "${1}" ]; then
     >&2 echo "Unable to find the ${2}. Did you set with.${2}?"
     exit 1
   fi
 }
 
-function changeWorkingDirectory() {
+changeWorkingDirectory() {
   pushd . > /dev/null 2>&1 || return
   cd "${INPUT_WORKDIR}"
 }
 
-function resetWorkingDirectory() {
+resetWorkingDirectory() {
   popd > /dev/null 2>&1 || return
 }
 
-function cleanCache() {
+cleanCache() {
   find . -type d -name  "__pycache__" -exec rm -r {} +
 }
 
-function runPoetry() {
+runPoetry() {
     sh -c "poetry $*"
 }
 
-function installDependencies(){
+installDependencies(){
   pyenv latest install "$INPUT_PYTHON_VERSION"
   pyenv latest global "$INPUT_PYTHON_VERSION"
   pip install --upgrade pip
   pip install poetry=="$INPUT_POETRY_VERSION"
   pyenv rehash
+}
+
+uses() {
+  [ ! -z "${1}" ]
 }
 
 main
