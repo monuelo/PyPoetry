@@ -50,7 +50,7 @@ cleanCache() {
 }
 
 runPoetry() {
-    sh -c "poetry $*"
+    sh -c "poetry "${INPUT_COMMAND}""
 }
 
 installDependencies(){
@@ -65,4 +65,4 @@ uses() {
   [ ! -z "${1}" ]
 }
 
-main $*
+main
