@@ -24,11 +24,12 @@ jobs:
 ### Arguments
 
 #### Required
-- `python_version` - the Python version to be installed.
-- `poetry_version` - the Poetry version to be installed.
+- `command` - the Poetry command to be executed.
 
 #### Optional
-- `workdir` - the working directory for Poetry.
+- `workdir` - the working directory for Poetry. (default: '.')
+- `python_version` - the Python version to be installed. (default: 3.8)
+- `poetry_version` - the Poetry version to be installed. (default: 1.0)
 
 ## License
 
