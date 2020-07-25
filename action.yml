@@ -5,16 +5,17 @@ branding:
   icon: 'package'
   color: 'gray-dark'
 inputs:
-  python_version:
-    description: 'The python version to install'
-    required: true
-  poetry_version:
-    description: 'The poetry version to install'
-    required: true
   command:
     description: 'The poetry command to run'
     required: true
-    default: '-V'
+  python_version:
+    description: 'The python version to install'
+    required: false
+    default: '3.8'
+  poetry_version:
+    description: 'The poetry version to install'
+    required: false
+    default: '1.0'
   workdir:
     description: 'Sets the working directory for poetry'
     required: false
