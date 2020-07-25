@@ -12,7 +12,7 @@ function main() {
   installDependencies
 
   # Change workdir (if provided)
-  if uses "${INPUT_WORKDIR}"; then
+  if "${INPUT_WORKDIR}"; then
     changeWorkingDirectory
   fi
 
