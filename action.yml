@@ -1,6 +1,6 @@
 name: 'Random name testing'
 author: '@hericlesme'
-description: 'Python dependency management and packaging with Poetry
+description: 'Python dependency management and packaging with Poetry'
 branding:
   icon: 'package'
   color: 'gray-dark'
