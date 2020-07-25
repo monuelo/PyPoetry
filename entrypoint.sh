@@ -56,7 +56,7 @@ function runPoetry() {
 function installDependencies(){
   pyenv latest install "$INPUT_PYTHON_VERSION"
   pyenv latest global "$INPUT_PYTHON_VERSION"
-  pip install -r /requirements.txt
+  pip install --upgrade pip
   pip install poetry=="$INPUT_POETRY_VERSION"
   pyenv rehash
 }
