@@ -1,6 +1,6 @@
 name: 'PyPoetry'
 author: '@hericlesme'
-description: 'Python dependency management and packaging with Poetry'
+description: 'An Action for python dependency management and packaging with Poetry'
 branding:
   icon: 'package'
   color: 'gray-dark'
