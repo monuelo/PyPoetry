@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install Dependencies
-      uses: hericlesme/pypoetry@master
+      uses: hericlesme/PyPoetry@master
       with:
         python_version: 3.8.0
         poetry_version: 1.0
