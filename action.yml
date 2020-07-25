@@ -1,4 +1,4 @@
-name: 'Random name testing'
+name: 'PyPoetry'
 author: '@hericlesme'
 description: 'Python dependency management and packaging with Poetry'
 branding:
