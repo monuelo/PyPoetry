@@ -4,11 +4,10 @@ set -e
 main() {
 
   # Check existence of required inputs
-  sanitize "${INPUT_PYTHON_VERSION}" "python version"
-  sanitize "${INPUT_POETRY_VERSION}" "poetry version"
+  sanitize "${INPUT_COMMAND}" "command"
 
   # Check working env
-  if ! [usesBoolean "${INPUT_CREATE_VENV}"]; then
+  if ! [ usesBoolean "${INPUT_CREATE_VENV}" ]; then
     sh -c poetry config virtualenvs.create false
   fi
 
