@@ -6,11 +6,6 @@ main() {
   # Check existence of required inputs
   sanitize "${INPUT_COMMAND}" "command"
 
-  # Check working env
-  if ! [ usesBoolean "${INPUT_CREATE_VENV}" ]; then
-    sh -c poetry config virtualenvs.create false
-  fi
-
   # Install dependencies (Poetry and Python)
   installDependencies
 
@@ -21,6 +16,11 @@ main() {
 
   # Fallback for local virtual environments defined in .python-version file
   pyenv latest local "$INPUT_PYTHON_VERSION"
+
+  # Check working env
+  if ! (usesBoolean "${INPUT_CREATE_VENV}"); then
+    sh -c poetry config virtualenvs.create false
+  fi
 
   # Execute poetry with given arguments
   runPoetry
