@@ -20,6 +20,9 @@ inputs:
     description: 'Sets the working directory for poetry'
     required: false
     default: '.'
+  create_venv:
+    description: 'Tells poetry to create a new virtual environment'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'

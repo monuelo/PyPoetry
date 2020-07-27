@@ -28,6 +28,7 @@ jobs:
 
 #### Optional
 - `workdir` - the working directory for Poetry. (default: '.')
+- `create_venv` - tells poetry to create a new virtual environment (default: false)
 - `python_version` - the Python version to be installed. (default: 3.8)
 - `poetry_version` - the Poetry version to be installed. (default: 1.0)
 

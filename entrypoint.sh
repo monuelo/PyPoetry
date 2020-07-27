@@ -2,11 +2,15 @@
 set -e
 
 main() {
-  echo "" 
 
   # Check existence of required inputs
   sanitize "${INPUT_PYTHON_VERSION}" "python version"
   sanitize "${INPUT_POETRY_VERSION}" "poetry version"
+
+  # Check working env
+  if ! [usesBoolean "${INPUT_CREATE_VENV}"]; then
+    sh -c poetry config virtualenvs.create false
+  fi
 
   # Install dependencies (Poetry and Python)
   installDependencies
@@ -63,6 +67,10 @@ installDependencies(){
 
 uses() {
   [ ! -z "${1}" ]
+}
+
+usesBoolean() {
+  [ ! -z "${1}" ] && [ "${1}" = "true" ]
 }
 
 main
